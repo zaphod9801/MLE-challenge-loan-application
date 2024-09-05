@@ -87,7 +87,7 @@ The project is hosted on **GitHub**, and we will use **Jenkins** to listen for c
 
 1. **Jenkins Webhook Integration**:
 
-   First, configure a webhook in GitHub to notify Jenkins of any changes to the `main`, `release/**`, or `develop` branches.
+   First, configure a webhook in GitHub to notify Jenkins of any changes to the `master`, `release/**`, or `develop` branches.
 
 2. **Jenkins Pipeline Script**:
 
@@ -110,7 +110,7 @@ The project is hosted on **GitHub**, and we will use **Jenkins** to listen for c
        stages {
            stage('Checkout') {
                steps {
-                   git 'https://github.com/your-username/your-repo.git'
+                   git 'https://github.com/zaphod9801/MLE-challenge-loan-application.git'
                }
            }
            stage('Build Docker Image') {

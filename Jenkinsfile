@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                git 'https://github.com/zaphod9801/MLE-challenge-loan-application.git'
             }
         }
         stage('Build Docker Image') {
