@@ -199,3 +199,25 @@ Although this project currently uses a `dataset.csv` file for training the model
    In a serverless environment like **Google Cloud Run**, the `GOOGLE_APPLICATION_CREDENTIALS` path can be passed as a secret or configured through the cloud provider's environment settings.
 
 By adopting this approach, the model can always be trained on fresh, real-time data, which improves accuracy and scalability in a production environment.
+
+## Model Performance and Limitations
+
+### Current Model Performance
+The current logistic regression model used in this project has poor performance, as demonstrated by its predictions on the dataset. Several alternative machine learning models, including RandomForestClassifier and XGBoost, were tested to improve the performance. Additionally, feature engineering techniques were applied to enhance the dataset quality. Unfortunately, none of these attempts led to any significant improvement in performance.
+
+### Correlation Analysis
+A quick exploratory data analysis (EDA) revealed that the features in the dataset had very low correlation coefficients with the target variable (loan approval). The highest correlation values found were:
+
+- Annual_Income with a correlation coefficient of 0.05.
+- Had_Past_Default with a correlation coefficient of -0.06.
+
+![alt text](<correlation.png>)
+
+These low correlation values suggest that the features are not strong predictors of the target variable, which could explain the poor model performance.
+
+### Outlier Detection
+During the EDA, no significant outliers were found in the dataset, further supporting the hypothesis that the low model performance is likely due to the dataset not containing strong predictive features. The low correlations and lack of strong feature signals make it difficult for any machine learning model to make accurate predictions.
+
+![alt text](boxplots.png)
+
+In conclusion, the dataset may need to be enriched with more relevant features or a different data source to improve the predictive power of the model.
